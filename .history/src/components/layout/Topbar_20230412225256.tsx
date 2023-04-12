@@ -32,8 +32,9 @@ const Topbar = () => {
             className="rounded-full object-cover w-10 h-10"
           ></Image>
           <div className="flex flex-col">
-            <h4 className="font-semibold">Hawkins Maru</h4>
-            <span className="text-gray80 ">Company Manager</span>
+            <span className="text-sm font-semibold text-primary">
+              Hawkins Maru
+            </span>
           </div>
         </div>
       </div>

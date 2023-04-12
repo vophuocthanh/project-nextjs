@@ -14,7 +14,6 @@ module.exports = {
         grayf4: "#F4F4F4",
         grayfc: "#FCFCFC",
         primary: "#11142D",
-        gray80: "#808191",
       },
     },
   },

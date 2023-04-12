@@ -24,17 +24,7 @@ const Topbar = () => {
           <IconNotification></IconNotification>
         </span>
         <div className="flex items-center gap-[10px] flex-shrink-0">
-          <Image
-            src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="avatar"
-            width={40}
-            height={40}
-            className="rounded-full object-cover w-10 h-10"
-          ></Image>
-          <div className="flex flex-col">
-            <h4 className="font-semibold">Hawkins Maru</h4>
-            <span className="text-gray80 ">Company Manager</span>
-          </div>
+          <Image src="https://source.unsplash.com/random" alt="avatar"></Image>
         </div>
       </div>
     </div>

@@ -12,9 +12,7 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className={manrope.className}>
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </QueryClientProvider>
   );
 }
