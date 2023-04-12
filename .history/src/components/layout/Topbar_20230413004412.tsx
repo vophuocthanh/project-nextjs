@@ -15,6 +15,7 @@ const Topbar = () => {
   );
 };
 
+export default Topbar;
 function Logo({}) {
   return (
     <Link href="/" className="flex items-center gap-3">
@@ -58,5 +59,3 @@ function User({}) {
     </div>
   );
 }
-
-export default Topbar;

@@ -1,0 +1,5 @@
+const sidebarLinks = [
+  {
+    title: "Dashboard",
+  },
+];

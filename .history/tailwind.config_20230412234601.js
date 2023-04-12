@@ -13,9 +13,8 @@ module.exports = {
       colors: {
         grayf4: "#F4F4F4",
         grayfc: "#FCFCFC",
-        primaryText: "#11142D",
+        primary: "#11142D",
         gray80: "#808191",
-        primary: "#475BE8",
       },
       spacing: {
         c10: "10px",

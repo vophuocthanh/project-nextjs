@@ -1,0 +1,3 @@
+const sidebarLinks = [
+  title: 'Dashboard'
+];

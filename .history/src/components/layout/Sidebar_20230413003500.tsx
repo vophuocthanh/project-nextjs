@@ -11,7 +11,7 @@ const Sidebar = () => {
     <div className="bg-grayfc py-6 px-4">
       {sidebarLinks.map((link) => (
         <SidebarLink
-          isActive={pathname === link.path}
+          isActive={pathname === link.pathname}
           key={link.title}
           link={link}
         ></SidebarLink>

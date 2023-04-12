@@ -10,25 +10,17 @@ const Sidebar = () => {
   return (
     <div className="bg-grayfc py-6 px-4">
       {sidebarLinks.map((link) => (
-        <SidebarLink
-          isActive={pathname === link.path}
-          key={link.title}
-          link={link}
-        ></SidebarLink>
+        <SidebarLink key={link.title} link={link}></SidebarLink>
       ))}
     </div>
   );
 };
-interface ISidebarLinkProps {
-  link: TSidebarLinks;
-  isActive: boolean;
-}
-function SidebarLink({ link, isActive }: ISidebarLinkProps) {
+function SidebarLink({ link }: { link: TSidebarLinks }) {
   return (
     <Link
       href={link.path}
       className={`px-6 py-4 flex items-center gap-c10 font-bold text-base text-gray80 rounded-xl  ${
-        isActive ? "bg-primary text-grayfc" : "hover:text-primary"
+        pathname === link.path ? "bg-primary text-grayfc" : "hover:text-primary"
       }`}
     >
       <span>{link.icon}</span>

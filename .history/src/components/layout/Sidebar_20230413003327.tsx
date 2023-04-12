@@ -10,20 +10,15 @@ const Sidebar = () => {
   return (
     <div className="bg-grayfc py-6 px-4">
       {sidebarLinks.map((link) => (
-        <SidebarLink
-          isActive={pathname === link.path}
-          key={link.title}
-          link={link}
-        ></SidebarLink>
+        <SidebarLink key={link.title} link={link}></SidebarLink>
       ))}
     </div>
   );
 };
 interface ISidebarLinkProps {
-  link: TSidebarLinks;
   isActive: boolean;
 }
-function SidebarLink({ link, isActive }: ISidebarLinkProps) {
+function SidebarLink({ link }: { link: TSidebarLinks }) {
   return (
     <Link
       href={link.path}
