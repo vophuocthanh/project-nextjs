@@ -12,7 +12,9 @@ module.exports = {
     extend: {
       colors: {
         grayf4: "#F4F4F4",
-        grayfc: "#FCFCFC",
+      },
+      fontFamily: {
+        primary: ["Manrope"],
       },
     },
   },
