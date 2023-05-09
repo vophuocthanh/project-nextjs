@@ -56,7 +56,7 @@ export const Page: React.FC = () => {
           >
             Storybook tutorials
           </a>
-          . Read more in the
+          . Read more in the{" "}
           <a
             href="https://storybook.js.org/docs"
             target="_blank"
@@ -68,7 +68,7 @@ export const Page: React.FC = () => {
         </p>
         <div className="tip-wrapper">
           <span className="tip">Tip</span> Adjust the width of the canvas with
-          the
+          the{" "}
           <svg
             width="10"
             height="10"
