@@ -1,5 +1,6 @@
-import { LayoutMain } from "@/components/layout";
+import ImageComponent from '@/components/images/ImageComponent';
+import { LayoutMain } from '@/components/layout';
 
 export default function Home() {
-  return <LayoutMain>HomePage</LayoutMain>;
+  return <ImageComponent></ImageComponent>;
 }

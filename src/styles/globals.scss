@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply font-normal bg-grayf4 text-primaryText text-sm;
+    height: 200vh;
   }
   input {
     outline: none;
