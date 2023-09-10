@@ -1,29 +1,21 @@
 import { LayoutMain } from '@/components/layout';
 import { API_URL } from '@/config';
 import PropertyItem from '@/modules/property/PropertyItem';
+import { getProperties } from '@/store/properties.service';
+import { PropertyItemData } from '@/types/property.types';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const PropertyPage = () => {
-  const [data, setData] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<any>(null);
-  console.log('data:', data);
-  useEffect(() => {
-    async function fetchingProperties() {
-      setLoading(true);
-      try {
-        const res = await axios.get(`${API_URL}/property`);
-        if (res.status === 200) setData(res.data);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchingProperties();
-  }, []);
-
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['properties'],
+    queryFn: () => getProperties(),
+    refetchOnWindowFocus: false, // mặc định là true, cái này để fetch lại data
+    cacheTime: 24 * 10 * 60 * 60 * 1000, // 1 day, cacheTime phải lâu hơn staleTime
+    staleTime: 24 * 5 * 60 * 60 * 1000, // 1/2 day, staleTime là cái thời gian để fetching data
+  });
+  const properties = data;
   return (
     <LayoutMain>
       <div className='flex items-center justify-between mb-5'>
@@ -40,10 +32,10 @@ const PropertyPage = () => {
           className='grid grid-cols-2 gap-x-16 gap-y-6 mb-9'
           aria-label='list'
         >
-          {data &&
-            data.length > 0 &&
-            data.map((item, index) => (
-              <PropertyItem item={item} key={index}></PropertyItem>
+          {properties &&
+            properties.length > 0 &&
+            properties.map((item: PropertyItemData, index: number) => (
+              <PropertyItem item={item} key={item.id}></PropertyItem>
             ))}
         </div>
         <div
