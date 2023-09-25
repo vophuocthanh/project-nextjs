@@ -5,15 +5,14 @@ import { getProperties } from '@/store/properties.service';
 import { PropertyItemData } from '@/types/property.types';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const PropertyPage = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ['properties'],
     queryFn: () => getProperties(),
-    refetchOnWindowFocus: false, // mặc định là true, cái này để fetch lại data
-    cacheTime: 24 * 10 * 60 * 60 * 1000, // 1 day, cacheTime phải lâu hơn staleTime
-    staleTime: 24 * 5 * 60 * 60 * 1000, // 1/2 day, staleTime là cái thời gian để fetching data
+    staleTime: 1000 * 60 * 1, // 1 mins
   });
   const properties = data;
   return (
@@ -22,9 +21,12 @@ const PropertyPage = () => {
         <h1 className='font-bold text-[25px] text-primaryText'>
           Property List
         </h1>
-        <button className='flex items-center justify-center px-5 py-3 text-sm text-white rounded-[10px] hover:bg-blue-400 bg-primary text-medium leading-normal'>
+        <Link
+          href='/property/create'
+          className='flex items-center justify-center px-5 py-3 text-sm text-white rounded-[10px] hover:bg-blue-400 bg-primary text-medium leading-normal'
+        >
           + Add Property
-        </button>
+        </Link>
       </div>
       <div className='p-5 bg-white rounded-2xl'>
         <div className='' aria-label='filter'></div>

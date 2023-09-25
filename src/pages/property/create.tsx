@@ -1,7 +1,25 @@
-import React from "react";
+import { LayoutMain } from '@/components/layout';
+import { addNewProperty } from '@/store/properties.service';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import React from 'react';
 
-const CreatePage = () => {
-  return <div>Create Page</div>;
+const PropertyCreatePage = () => {
+  const queryClient = useQueryClient();
+  const mutation = useMutation({
+    mutationFn: addNewProperty,
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['properties'] });
+    },
+  });
+  const handleCreateNewProperty = () => {
+    mutation.mutate();
+  };
+  return (
+    <LayoutMain>
+      <button onClick={handleCreateNewProperty}>Add new property</button>
+    </LayoutMain>
+  );
 };
 
-export default CreatePage;
+export default PropertyCreatePage;

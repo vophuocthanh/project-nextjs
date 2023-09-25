@@ -1,4 +1,4 @@
-import { TSidebarLinks } from "@/types/general.types";
+import { TSidebarLinks } from '@/types/general.types';
 import {
   IconBuilding,
   IconDashboard,
@@ -6,37 +6,37 @@ import {
   IconPerson,
   IconProfile,
   IconStar,
-} from "@/components/icons";
+} from '@/components/icons';
 
 export const sidebarLinks: TSidebarLinks[] = [
   {
-    title: "Dashboard",
+    title: 'Dashboard',
     icon: <IconDashboard />,
-    path: "/",
+    path: '/',
   },
   {
-    title: "Property",
+    title: 'Property',
     icon: <IconBuilding />,
-    path: "/property",
+    path: '/properties',
   },
   {
-    title: "Agent",
+    title: 'Agent',
     icon: <IconPerson />,
-    path: "/agent",
+    path: '/agent',
   },
   {
-    title: "Review",
+    title: 'Review',
     icon: <IconStar />,
-    path: "/review",
+    path: '/review',
   },
   {
-    title: "Message",
+    title: 'Message',
     icon: <IconMessage />,
-    path: "/message",
+    path: '/message',
   },
   {
-    title: "My Profile",
+    title: 'My Profile',
     icon: <IconProfile />,
-    path: "/my-profile",
+    path: '/my-profile',
   },
 ];

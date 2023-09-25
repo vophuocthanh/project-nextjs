@@ -22,7 +22,8 @@ const PropertyItem = ({ item }: PropertyItemProps) => {
         alt='image'
         height={150}
         width={200}
-        className='flex-shrink-0 object-cover rounded-xl h-[130px]'
+        className='object-cover  rounded-xl'
+        priority
       ></Image>
       <div className='flex-1'>
         <span className='inline-block px-[10px] py-2 text-xs font-semibold leading-normal rounded-[5px] bg-secondary text-primary mb-3'>
