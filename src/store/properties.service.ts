@@ -1,4 +1,5 @@
 import { API_URL } from '@/config';
+import { PropertyItemData } from '@/types/property.types';
 import axios from 'axios';
 
 const example = {
@@ -49,7 +50,9 @@ export async function addNewProperty() {
   }
 }
 
-export async function getProperty(id: number) {
+export async function getProperty(
+  id: number
+): Promise<PropertyItemData | null | undefined> {
   try {
     const response = await axios.get(`${API_URL}/property/${id}`);
     if (response.status === 200) {
