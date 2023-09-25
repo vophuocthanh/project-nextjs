@@ -48,3 +48,15 @@ export async function addNewProperty() {
     console.log('error:', error);
   }
 }
+
+export async function getProperty(id: number) {
+  try {
+    const response = await axios.get(`${API_URL}/property/${id}`);
+    if (response.status === 200) {
+      return response.data;
+    }
+    return null;
+  } catch (error) {
+    console.log('getProperties ~ error:', error);
+  }
+}
