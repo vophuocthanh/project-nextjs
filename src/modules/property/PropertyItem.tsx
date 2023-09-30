@@ -1,4 +1,4 @@
-import { IconBed, IconCross, IconLocation } from '@/components/icons';
+import { IconBeds, IconCross, IconLocation } from '@/components/icons';
 import { PropertyItemData } from '@/types/property.types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,7 +22,7 @@ const PropertyItem = ({ item }: PropertyItemProps) => {
         alt='image'
         height={150}
         width={200}
-        className='object-cover  rounded-xl'
+        className='object-cover rounded-xl'
         priority
       ></Image>
       <div className='flex-1'>
@@ -38,7 +38,7 @@ const PropertyItem = ({ item }: PropertyItemProps) => {
         </div>
         <div className='flex items-center gap-2'>
           <div className='flex items-center gap-1'>
-            <IconBed></IconBed>
+            <IconBeds></IconBeds>
             <span className='text-xs font-medium'>{item.info?.beds}</span>
           </div>
           <div className='flex items-center gap-1'>
