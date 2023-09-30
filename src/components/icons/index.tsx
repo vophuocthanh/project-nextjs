@@ -17,3 +17,4 @@ export { default as IconSmookingArea } from './IconSmookingArea';
 export { default as IconKitchen } from './IconKitchen';
 export { default as IconBalcony } from './IconBalcony';
 export { default as IconParkingArea } from './IconParkingArea';
+export { default as IconPhone } from './IconPhone';

@@ -7,7 +7,9 @@ import {
   IconBaths,
   IconBeds,
   IconKitchen,
+  IconMessage,
   IconParkingArea,
+  IconPhone,
   IconRating,
   IconSmookingArea,
   IconWifi,
@@ -171,15 +173,37 @@ const PropertyDetails = () => {
                 {agent?.properties} Properties
               </div>
               <div className='grid grid-cols-2 gap-5 mt-6'>
-                <button>Message</button>
-                <button>Call</button>
+                <Button
+                  variant='primary'
+                  size='md'
+                  className='rounded-[5px] px-4'
+                >
+                  <span>
+                    <IconMessage></IconMessage>
+                  </span>
+                  <span>Message</span>
+                </Button>
+                <Button
+                  variant='secondary'
+                  size='md'
+                  className='rounded-[5px] px-4'
+                >
+                  <span>
+                    <IconPhone></IconPhone>
+                  </span>
+                  <span>Call</span>
+                </Button>
               </div>
             </div>
             <div aria-label='map'>
               <img src='/map.png' alt='' />
             </div>
             <div>
-              <Button className='w-full text-white rounded-lg bg-primary'>
+              <Button
+                className='w-full rounded-[10px] h-12'
+                size='lg'
+                variant='primary'
+              >
                 Book Now
               </Button>
             </div>
