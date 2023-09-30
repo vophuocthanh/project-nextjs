@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import HeadContent from '@/components/HeadContent';
+import { Button } from '@/components/button';
 import {
   IconArea,
   IconBalcony,
@@ -21,27 +22,12 @@ import React from 'react';
 
 function renderFacilityIcon(name: string): React.ReactNode {
   console.log(name);
-  switch (name) {
-    case 'Beds':
-      return <IconBeds></IconBeds>;
-    case 'Baths':
-      return <IconBaths></IconBaths>;
-    case 'Wifi':
-      return <IconWifi></IconWifi>;
-    case 'Area':
-      return <IconArea></IconArea>;
-    case 'Smooking Area':
-      return <IconSmookingArea></IconSmookingArea>;
-    case 'Parking Area':
-      return <IconParkingArea></IconParkingArea>;
-    case 'Balcony':
-      return <IconBalcony></IconBalcony>;
-    case 'Kitchen':
-      return <IconKitchen></IconKitchen>;
-    default:
-      return <></>;
-  }
-  return <></>;
+  // cách này chỉ dành cho trường hợp icon giống tên với name (database)
+  // còn cách call vẻ 2 thì dùng theo cách đó của next (dynamic import) (dùng swich case)
+  const Icon = dynamic(
+    () => import(`../../components/icons/Icon${name.replace(/ /, '')}`)
+  );
+  return <Icon></Icon>;
 }
 
 const PropertyDetails = () => {
@@ -193,7 +179,9 @@ const PropertyDetails = () => {
               <img src='/map.png' alt='' />
             </div>
             <div>
-              <button>Book Now</button>
+              <Button className='w-full text-white rounded-lg bg-primary'>
+                Book Now
+              </Button>
             </div>
           </div>
         </div>
