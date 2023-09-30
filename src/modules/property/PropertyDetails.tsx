@@ -1,6 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import HeadContent from '@/components/HeadContent';
-import { IconRating } from '@/components/icons';
+import {
+  IconArea,
+  IconBalcony,
+  IconBaths,
+  IconBeds,
+  IconKitchen,
+  IconParkingArea,
+  IconRating,
+  IconSmookingArea,
+  IconWifi,
+} from '@/components/icons';
 import { Spinner } from '@/components/loading';
 import { getProperty } from '@/store/properties.service';
 import { useQuery } from '@tanstack/react-query';
@@ -9,12 +19,29 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-function renderFacilityIcon(name: string) {
+function renderFacilityIcon(name: string): React.ReactNode {
   console.log(name);
-  const Icon = dynamic(
-    () => import(`../../components/icons/Icon${name.replace(/ /, '')}`)
-  );
-  return <Icon></Icon>;
+  switch (name) {
+    case 'Beds':
+      return <IconBeds></IconBeds>;
+    case 'Baths':
+      return <IconBaths></IconBaths>;
+    case 'Wifi':
+      return <IconWifi></IconWifi>;
+    case 'Area':
+      return <IconArea></IconArea>;
+    case 'Smooking Area':
+      return <IconSmookingArea></IconSmookingArea>;
+    case 'Parking Area':
+      return <IconParkingArea></IconParkingArea>;
+    case 'Balcony':
+      return <IconBalcony></IconBalcony>;
+    case 'Kitchen':
+      return <IconKitchen></IconKitchen>;
+    default:
+      return <></>;
+  }
+  return <></>;
 }
 
 const PropertyDetails = () => {
